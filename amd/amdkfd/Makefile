@@ -58,12 +58,13 @@ CFLAGS+= '-DLINUXKPI_PARAM_PREFIX=amdkfd_'
 CFLAGS+= '-DKBUILD_MODNAME="${KMOD}"'
 
 SRCS+=	device_if.h vnode_if.h bus_if.h pci_if.h pci_iov_if.h device_if.h iicbus_if.h opt_drm.h \
-	opt_vm.h opt_compat.h opt_syscons.h
+	opt_vm.h opt_compat.h opt_syscons.h opt_acpi.h
 
 .include <bsd.kmod.mk>
 
 CWARNFLAGS+=	-Wno-pointer-arith
 CWARNFLAGS+=	-Wno-pointer-sign ${CWARNFLAGS.${.IMPSRC:T}}
+CWARNFLAGS+=	-Wno-cast-qual
 
 CWARNFLAGS.kfd_chardev.c=	-Wno-format
 CWARNFLAGS.kfd_dbgdev.c=	-Wno-format
