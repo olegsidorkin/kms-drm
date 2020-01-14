@@ -212,6 +212,14 @@ struct kfd_hsa_memory_exception_data {
 	__u32 pad;
 };
 
+/* hw exception data */
+struct kfd_hsa_hw_exception_data {
+	__u32 reset_type;
+	__u32 reset_cause;
+	__u32 memory_lost;
+	__u32 gpu_id;
+};
+
 /* Event data*/
 struct kfd_event_data {
 	union {
