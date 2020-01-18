@@ -55,4 +55,10 @@ cpufreq_cpu_put(struct cpufreq_policy *policy)
 {
 }
 
+static inline unsigned int
+cpufreq_quick_get_max(unsigned int cpu)
+{
+    return 0;
+}
+
 #endif
